@@ -1,4 +1,4 @@
-package Action;
+package action;
 
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
