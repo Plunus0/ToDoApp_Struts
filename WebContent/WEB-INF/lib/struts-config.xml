@@ -4,11 +4,28 @@
   "http://struts.apache.org/dtds/struts-config_1_3.dtd">
 
 <struts-config>
-
-	<!-- Action Mappings -->
-	<action-mappings>
-		<!-- 예시 액션 매핑 -->
-		
-	</action-mappings>
-  
+    <display-name></display-name>
+    <description></description>
+    
+    <!-- Form Beans -->
+    <form-beans>
+        <form-bean name="toDoForm" type="com.example.ToDoForm"/>
+    </form-beans>
+    
+    <global-exceptions></global-exceptions>
+    <global-forwards></global-forwards>
+    
+    <!-- Action Mappings -->
+    <action-mappings>
+        <action path="/addTodo"
+                type="com.example.AddToDoAction"
+                name="toDoForm"
+                scope="request"
+                input="/addTodo.jsp"
+                validate="false">
+            <forward name="success" path="/todoAdded.jsp"/>
+        </action>
+    </action-mappings>
+    
+    <controller></controller>
 </struts-config>
