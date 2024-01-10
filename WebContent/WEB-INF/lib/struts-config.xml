@@ -9,7 +9,7 @@
     
     <!-- Form Beans -->
     <form-beans>
-        <form-bean name="toDoForm" type="from.ToDoForm"/>
+        <form-bean name="toDoForm" type="From.ToDoForm"/>
     </form-beans>
     
     <global-exceptions></global-exceptions>
@@ -18,7 +18,7 @@
     <!-- Action Mappings -->
     <action-mappings>
         <action path="/addTodo"
-                type="action.AddToDoAction"
+                type="Action.AddToDoAction"
                 name="toDoForm"
                 scope="request"
                 input="/addTodo.jsp"
