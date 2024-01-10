@@ -14,9 +14,9 @@ public class DBConnector {
     }
 
     public static Connection getConnection() throws SQLException {
-        String url = "jdbc:oracle:thin:@localhost:1521:xe"; // 데이터베이스 URL
-        String user = "daul"; // 데이터베이스 사용자 이름
-        String password = "1234"; // 데이터베이스 비밀번호
+        String url = "jdbc:oracle:thin:@localhost:1521:xe"; 
+        String user = "daul"; 
+        String password = "1234"; 
 
         return DriverManager.getConnection(url, user, password);
     }
