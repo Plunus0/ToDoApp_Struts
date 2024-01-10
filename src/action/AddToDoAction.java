@@ -1,20 +1,23 @@
-package JDBC;
-
+package action;
 
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
+import form.ToDoForm;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class HelloWorldAction extends Action {
+public class AddToDoAction extends Action {
+    @Override
     public ActionForward execute(ActionMapping mapping, ActionForm form,
                                  HttpServletRequest request, HttpServletResponse response) {
-        // Actionø°º≠ « ø‰«— ∑Œ¡˜ √≥∏Æ
+    	ToDoForm toDoForm = (ToDoForm) form;
+    	// ToDoItem Îç∞Ïù¥ÌÑ∞Î•º DBÏóê Ï†ÄÏû•ÌïòÎäî Î°úÏßÅ
+        // ...
 
         return mapping.findForward("success");
     }
 }
-

@@ -9,7 +9,7 @@
     
     <!-- Form Beans -->
     <form-beans>
-        <form-bean name="toDoForm" type="From.ToDoForm"/>
+        <form-bean name="toDoForm" type="form.ToDoForm"/>
     </form-beans>
     
     <global-exceptions></global-exceptions>
@@ -18,12 +18,12 @@
     <!-- Action Mappings -->
     <action-mappings>
         <action path="/addTodo"
-                type="Action.AddToDoAction"
+                type="action.AddToDoAction"
                 name="toDoForm"
                 scope="request"
                 input="/addTodo.jsp"
                 validate="false">
-            <forward name="success" path="/todoAdded.jsp"/>
+            <forward name="success" path="/View/todoAdded.jsp"/>
         </action>
     </action-mappings>
     
