@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <%@ page import="java.sql.Connection" %>
 <%@ page import="java.sql.SQLException" %>
-<%@ page import="jdbc.DBConnector" %>
+<%@ page import="com.daul.struts.todoapp.jdbc.DBConnector" %>
 <!DOCTYPE html>
 <html>
 <head>

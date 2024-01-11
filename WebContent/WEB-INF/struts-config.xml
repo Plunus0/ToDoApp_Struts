@@ -8,8 +8,12 @@
     <description></description>
     
     <!-- Form Beans -->
-    <form-beans>
+<!--     <form-beans>
         <form-bean name="toDoForm" type="form.ToDoForm"/>
+    </form-beans> -->
+    
+      <form-beans>
+        <form-bean name="helloWorldForm" type="com.daul.struts.todoapp.form.HelloWorldForm"/>
     </form-beans>
     
     <global-exceptions></global-exceptions>
@@ -17,15 +21,27 @@
     
     <!-- Action Mappings -->
     <action-mappings>
-        <action path="/addTodo"
+<!--         <action path="/addTodo"
                 type="action.AddToDoAction"
                 name="toDoForm"
                 scope="request"
                 input="/addTodo.jsp"
                 validate="false">
             <forward name="success" path="/View/todoAdded.jsp"/>
+        </action> -->
+        
+        <action path="/helloWorld" type="com.daul.struts.todoapp.action.HelloWorldAction" name="helloWorldForm" scope="request">
+            <forward name="success" path="/View/helloWorld.jsp"/>
         </action>
+        
     </action-mappings>
+    
+    
+  
+
+   
+        
+    
     
     <controller></controller>
 </struts-config>

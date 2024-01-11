@@ -29,7 +29,7 @@
   			/WEB-INF/struts-config.xml
   		</param-value>
   	</init-param>
-  	<load-on-startup>2</load-on-startup>
+  	<load-on-startup>1</load-on-startup>
   </servlet>
   
   <!-- uri 주소 마지막에 .do가 들어갈 경우 모두 매핑하는 설정 -->

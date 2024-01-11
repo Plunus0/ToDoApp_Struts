@@ -1,4 +1,4 @@
-package jdbc;
+package com.daul.struts.todoapp.jdbc;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

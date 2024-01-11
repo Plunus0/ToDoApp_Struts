@@ -1,4 +1,4 @@
-package form;
+package com.daul.struts.todoapp.form;
 
 import org.apache.struts.action.ActionForm;
 

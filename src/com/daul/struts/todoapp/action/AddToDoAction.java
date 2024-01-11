@@ -1,20 +1,23 @@
-package jdbc;
-
+package com.daul.struts.todoapp.action;
 
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
+import com.daul.struts.todoapp.form.ToDoForm;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class HelloWorldAction extends Action {
+public class AddToDoAction extends Action {
+    @Override
     public ActionForward execute(ActionMapping mapping, ActionForm form,
                                  HttpServletRequest request, HttpServletResponse response) {
-        // Action���� �ʿ��� ���� ó��
+    	ToDoForm toDoForm = (ToDoForm) form;
+    	// ToDoItem 데이터를 DB에 저장하는 로직
+        // ...
 
         return mapping.findForward("success");
     }
 }
-

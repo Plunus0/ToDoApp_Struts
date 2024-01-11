@@ -1,4 +1,4 @@
-package dto;
+package com.daul.struts.todoapp.dto;
 
 import lombok.Getter;
 
