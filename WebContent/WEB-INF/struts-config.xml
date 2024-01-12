@@ -8,11 +8,8 @@
     <description></description>
     
     <!-- Form Beans -->
-<!--     <form-beans>
-        <form-bean name="toDoForm" type="form.ToDoForm"/>
-    </form-beans> -->
-    
-      <form-beans>
+	<form-beans>
+        <form-bean name="toDoForm" type="com.daul.struts.todoapp.form.ToDoForm"/>
         <form-bean name="helloWorldForm" type="com.daul.struts.todoapp.form.HelloWorldForm"/>
     </form-beans>
     
@@ -21,27 +18,25 @@
     
     <!-- Action Mappings -->
     <action-mappings>
-<!--         <action path="/addTodo"
-                type="action.AddToDoAction"
-                name="toDoForm"
-                scope="request"
-                input="/addTodo.jsp"
-                validate="false">
-            <forward name="success" path="/View/todoAdded.jsp"/>
-        </action> -->
-        
-        <action path="/helloWorld" type="com.daul.struts.todoapp.action.HelloWorldAction" name="helloWorldForm" scope="request">
+        <action path="/helloWorld" 
+        		type="com.daul.struts.todoapp.action.HelloWorldAction" 
+        		name="helloWorldForm" 
+        		scope="request">
             <forward name="success" path="/View/helloWorld.jsp"/>
         </action>
-        
+        <action path="/toDo"
+	        	type="com.daul.struts.todoapp.action.ToDoAction"
+	        	name="toDoForm"
+	        	scope="request"
+	        	input="/View/todo.jsp">
+    		<forward name="success" path="/View/todo.jsp"/>
+		</action>
+		<action path="/initToDo" 
+        		type="com.daul.struts.todoapp.action.InitToDoAction">
+    		<forward name="success" path="/View/todo.jsp"/>
+		</action>
     </action-mappings>
-    
-    
-  
-
-   
-        
-    
-    
+    	
     <controller></controller>
+    <message-resources parameter="ApplicationResources"/>
 </struts-config>

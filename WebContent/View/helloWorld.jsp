@@ -11,5 +11,9 @@
         <html:text property="message"/>
         <html:submit/>
     </html:form>
+    
+    <hr/>
+    <p>Received Message: ${receivedMessage}</p>
+    
 </body>
 </html>
