@@ -61,7 +61,7 @@
 	    </action>
 	    
 	    <action path="/completed" type="com.daul.struts.todoapp.action.CompletedAction">
-	        <forward name="success" path="/list.do" redirect="true"/>
+	        
 	    </action>
 	    
 	    <action path="/delete" 

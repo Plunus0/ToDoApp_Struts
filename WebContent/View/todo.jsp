@@ -9,6 +9,13 @@
 <head>
     <title>ToDo List</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+    <style type="text/css">
+	    .completed-todo {
+	    text-decoration: line-through;
+	}
+    </style>
+    
 	<script>
 	var isSubmitting = false;
 
@@ -37,6 +44,39 @@
 	function onSubmit() {
 	    isSubmitting = true;
 	}
+	
+/* 	function toggleCompleted(id, completed) {
+	    var xhr = new XMLHttpRequest();
+	    xhr.open("POST", "/ToDoApp_Struts/completed.do", true);
+	    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+	    xhr.onreadystatechange = function() {
+	        if (xhr.readyState == 4 && xhr.status == 200) {
+	            // 요청이 성공적으로 처리되었을 때의 로직
+	            console.log("Update Completed");
+	        }
+	    };
+	    xhr.send("todoId=" + id + "&completed=" + completed);
+	} */
+	
+	function toggleCompleted(id, completed) {
+	    var xhr = new XMLHttpRequest();
+	    xhr.open("POST", "/ToDoApp_Struts/completed.do", true);
+	    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+	    xhr.onreadystatechange = function() {
+	        if (xhr.readyState == 4 && xhr.status == 200) {
+	            var todoTextElement = document.getElementById('todoSpan' + id);
+
+	            if (completed) {
+	                todoTextElement.classList.add('completed-todo');
+	                todoTextElement.style.textDecoration = "line-through"; // 취소선 추가
+	            } else {
+	                todoTextElement.classList.remove('completed-todo');
+	                todoTextElement.style.textDecoration = "none"; // 취소선 제거
+	            }
+	        }
+	    };
+	    xhr.send("todoId=" + id + "&completed=" + completed);
+	}
 	</script>
 </head>
 
@@ -56,9 +96,11 @@
 			<c:forEach var="item" items="${toDoItems}" varStatus="status">
 			    <tr>
 			        <td>
-			            <input type="checkbox" name="completed${item.id}" ${item.isCompleted == 1 ? 'checked' : ''} />
+			            <input type="checkbox" name="completed${item.id}"
+			                   ${item.isCompleted == 1 ? 'checked' : ''}
+			                   onchange="toggleCompleted(${item.id}, this.checked)" />
 			        </td>
-			        <td>
+			        <td class="${item.isCompleted == 1 ? 'completed-todo' : ''}">
                         <!-- 수정 가능한 텍스트 박스와 기존 텍스트 뷰 -->
 			            <span id="todoSpan${item.id}" onclick="editTodo(this, ${item.id})">${item.todo}</span>
                             <html:form action="/update" method="post" onsubmit="onSubmit();">
