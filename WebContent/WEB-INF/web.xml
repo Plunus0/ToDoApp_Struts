@@ -29,6 +29,14 @@
   			/WEB-INF/struts-config.xml
   		</param-value>
   	</init-param>
+    <init-param>
+        <param-name>struts.action.extension</param-name>
+        <param-value>ria.do.action</param-value>
+    </init-param>
+	<init-param>
+		<param-name>struts.i18n.encoding</param-name>
+		<param-value>utf-8</param-value>
+	</init-param>
   	<load-on-startup>1</load-on-startup>
   </servlet>
   
@@ -38,8 +46,18 @@
   	<url-pattern>*.do</url-pattern>
   </servlet-mapping>
   
-  <!-- 인코딩 필터 -->
-
-
+	<filter>
+		<filter-name>charsetFilter</filter-name>
+		<filter-class>org.apache.catalina.filters.SetCharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>charsetFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
 
 </web-app>

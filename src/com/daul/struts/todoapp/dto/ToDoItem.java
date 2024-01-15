@@ -1,5 +1,7 @@
 package com.daul.struts.todoapp.dto;
 
+import java.util.Date;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -7,5 +9,7 @@ import lombok.Setter;
 @Setter
 public class ToDoItem {
     private Long id;
-    private String title;
+    private String todo;
+    private Date regDate;
+    private Integer isCompleted;
 }

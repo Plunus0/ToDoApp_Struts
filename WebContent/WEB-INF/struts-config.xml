@@ -18,12 +18,14 @@
     
     <!-- Action Mappings -->
     <action-mappings>
+    
         <action path="/helloWorld" 
         		type="com.daul.struts.todoapp.action.HelloWorldAction" 
         		name="helloWorldForm" 
         		scope="request">
             <forward name="success" path="/View/helloWorld.jsp"/>
         </action>
+        
         <action path="/toDo"
 	        	type="com.daul.struts.todoapp.action.ToDoAction"
 	        	name="toDoForm"
@@ -31,12 +33,46 @@
 	        	input="/View/todo.jsp">
     		<forward name="success" path="/View/todo.jsp"/>
 		</action>
-		<action path="/initToDo" 
-        		type="com.daul.struts.todoapp.action.InitToDoAction">
-    		<forward name="success" path="/View/todo.jsp"/>
+		
+	    <action path="/updateCompleted" 
+	            type="com.daul.struts.todoapp.action.ToDoAction">
+	        <forward name="success" path="/View/todo.jsp"/>
+	    </action>
+	    
+	    
+	    
+		<action path="/list" 
+				type="com.daul.struts.todoapp.action.ListAction" 
+				name="toDoForm"
+				scope="request">
+			<forward name="success" path="/View/todo.jsp"/>
 		</action>
+		
+	    <action path="/add" 
+	    		type="com.daul.struts.todoapp.action.AddAction"
+	    		name="toDoForm">
+	        <forward name="success" path="/list.do" redirect="true"/>
+	    </action>
+	    
+	    <action path="/update"
+	    		type="com.daul.struts.todoapp.action.UpdateAction"
+	    		name="toDoForm">
+	        <forward name="success" path="/list.do" redirect="true"/>
+	    </action>
+	    
+	    <action path="/completed" type="com.daul.struts.todoapp.action.CompletedAction">
+	        <forward name="success" path="/list.do" redirect="true"/>
+	    </action>
+	    
+	    <action path="/delete" 
+	    		type="com.daul.struts.todoapp.action.DeleteAction"
+	        	name="toDoForm">
+	        <forward name="success" path="/list.do" redirect="true"/>
+	    </action>
+	    
     </action-mappings>
     	
     <controller></controller>
     <message-resources parameter="ApplicationResources"/>
+   
 </struts-config>
